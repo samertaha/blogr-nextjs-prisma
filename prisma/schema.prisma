@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 // schema.prisma
 
 generator client {
@@ -6,9 +9,9 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url = env("POSTGRES_PRISMA_URL") 
 }
+// removed this line >> directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 
 // schema.prisma
 
@@ -69,3 +72,5 @@ model VerificationToken {
 
   @@unique([identifier, token])
   }
+
+  
